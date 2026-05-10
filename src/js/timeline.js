@@ -393,7 +393,7 @@ const timeline = (function () {
             });
         chart.selectAll('svg').data(d3data).enter().append('rect')
             .attr('class', 'bar total tooltip')
-            .style('fill', 'var(--bgColor3)')
+            .style('fill', function(d, i) { var c=['#1a8e6a','#f9ba02','#6762a2','#eb298d','#7cc522','#ec6502']; return c[i % c.length]; })
             .style('stroke', 'black')
             .attr('shape-rendering', 'crispEdges')
             .attr('x', function (d) {
